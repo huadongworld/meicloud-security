@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="meicloud-security" />
+        <module name="meicloud-security-app" />
+        <module name="meicloud-security-browser" />
+        <module name="meicloud-security-core" />
+        <module name="meicloud-security-demo" />
       </profile>
     </annotationProcessing>
   </component>
