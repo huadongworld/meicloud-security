@@ -1,4 +1,4 @@
-package com.meicloud.web;
+package com.meicloud.web.controller;
 
 import java.util.HashMap;
 import java.util.Map;

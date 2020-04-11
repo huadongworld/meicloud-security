@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de89ba09-451f-4a4d-8e51-c883d08272be" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/exception/UserNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/demo-binding.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/demo-logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/demo-signIn.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/demo-signUp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/filter/TimeFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/interceptor/TimeInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/controller/ControllerExceptionHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+            <state relative-caret-position="462">
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#243#244#0" expanded="true" />
@@ -87,6 +77,66 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerExceptionHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/controller/ControllerExceptionHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/filter/TimeFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding>
+                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/interceptor/TimeInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/config/WebConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DispatcherServlet.class" pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.10.RELEASE/spring-webmvc-4.3.10.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="459" column="46" lean-forward="true" selection-start-line="459" selection-start-column="46" selection-end-line="459" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -164,6 +214,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/exception/UserNotExistException.java" />
         <option value="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/Application.java" />
+        <option value="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/ControllerExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/filter/TimeFilter.java" />
+        <option value="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/interceptor/TimeInterceptor.java" />
+        <option value="$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/config/WebConfig.java" />
       </list>
     </option>
   </component>
@@ -313,7 +367,43 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="meicloud" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meicloud-security" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meicloud-security" type="462c0819:PsiDirectoryNode" />
+              <item name="meicloud-security-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="meicloud" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meicloud-security" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meicloud-security" type="462c0819:PsiDirectoryNode" />
+              <item name="meicloud-security-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="meicloud" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meicloud-security" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meicloud-security" type="462c0819:PsiDirectoryNode" />
+              <item name="meicloud-security-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="meicloud" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meicloud-security" type="b2602c69:ProjectViewProjectNode" />
@@ -331,16 +421,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meicloud-security" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meicloud-security" type="462c0819:PsiDirectoryNode" />
-              <item name="meicloud-security-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="error" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,7 +432,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="BasicErro&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.BasicErrorController" />
+    <property name="SearchEverywhereHistoryKey" value="Dispaser&#9;PSI&#9;JAVA://org.springframework.web.servlet.DispatcherServlet&#10;BasicErro&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.BasicErrorController" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -364,6 +444,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea\meicloud\meicloud-security\meicloud-security-demo\src\main\java\com\meicloud\web" />
+      <recent name="D:\idea\meicloud\meicloud-security\meicloud-security-demo\src\main\java\com\meicloud\web\filter" />
       <recent name="D:\idea\meicloud\meicloud-security\meicloud-security-demo\src\main\java\com\meicloud" />
       <recent name="D:\idea\meicloud\meicloud-security\meicloud-security-demo\src\main\resources" />
       <recent name="D:\idea\meicloud\meicloud-security" />
@@ -465,7 +547,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586595071954</updated>
-      <workItem from="1586595074883" duration="5194000" />
+      <workItem from="1586595074883" duration="10594000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1586595440692</created>
@@ -481,14 +563,22 @@
       <option name="project" value="LOCAL" />
       <updated>1586597514926</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SpringBoot异常处理机制">
+      <created>1586600514889</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586600514889</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5194000" />
+    <option name="totallyTimeSpent" value="10594000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5005359" side_tool="true" weight="0.3290398" />
@@ -501,7 +591,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.47775176" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47775176" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
@@ -530,17 +620,44 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="添加子模块以及各模块依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加子模块以及各模块依赖" />
+    <MESSAGE value="SpringBoot异常处理机制" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpringBoot异常处理机制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -618,20 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/403.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/500.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -646,17 +749,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/exception/UserNotExistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        <state relative-caret-position="462">
+          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#243#244#0" expanded="true" />
@@ -664,6 +760,84 @@
             <element signature="e#545#546#0" expanded="true" />
             <element signature="e#596#597#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/403.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/error/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/resources/resources/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/exception/UserNotExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/controller/ControllerExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/filter/TimeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meicloud-security-demo/src/main/java/com/meicloud/web/interceptor/TimeInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.10.RELEASE/spring-webmvc-4.3.10.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="459" column="46" lean-forward="true" selection-start-line="459" selection-start-column="46" selection-end-line="459" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -744,7 +918,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
