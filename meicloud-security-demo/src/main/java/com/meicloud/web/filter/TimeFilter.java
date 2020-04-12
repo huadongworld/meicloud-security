@@ -29,7 +29,7 @@ public class TimeFilter implements Filter {
      */
     @Override
     public void destroy() {
-        System.out.println("time filter destroy");
+//        System.out.println("time filter destroy");
     }
 
     /**
@@ -44,11 +44,11 @@ public class TimeFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        System.out.println("time filter start");
-        long start = System.currentTimeMillis();
+//        System.out.println("time filter start");
+//        long start = System.currentTimeMillis();
         chain.doFilter(request, response);
-        System.out.println("time filter 耗时:" + (System.currentTimeMillis() - start));
-        System.out.println("time filter finish");
+//        System.out.println("time filter 耗时:" + (System.currentTimeMillis() - start));
+//        System.out.println("time filter finish");
     }
 
     /**
@@ -59,6 +59,6 @@ public class TimeFilter implements Filter {
      */
     @Override
     public void init(FilterConfig arg0) throws ServletException {
-        System.out.println("time filter init");
+//        System.out.println("time filter init");
     }
 }

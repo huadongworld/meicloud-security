@@ -1,6 +1,5 @@
 package com.meicloud;
 
-import com.meicloud.exception.UserNotExistException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +19,11 @@ public class Application {
 
     @GetMapping("/hello")
     public String hello() {
-        throw new UserNotExistException("100001");
+        return "hello spring security";
+    }
+
+    @GetMapping("/hello222")
+    public String hello222() {
+        return "hello222 spring security";
     }
 }
