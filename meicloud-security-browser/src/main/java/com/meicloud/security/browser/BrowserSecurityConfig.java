@@ -1,11 +1,15 @@
 package com.meicloud.security.browser;
 
+import com.meicloud.security.core.properties.SecurityProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
  * 浏览器环境下安全配置主类
@@ -21,13 +25,32 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 
+	@Autowired
+	private SecurityProperties securityProperties;
+
+	@Autowired
+	private AuthenticationSuccessHandler meicloudAuthenticationSuccessHandler;
+
+	@Autowired
+	private AuthenticationFailureHandler meicloudAuthenticationFailureHandler;
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-//		http.httpBasic()
-		http.formLogin()// 表单方式
+		http.formLogin()
+				// 当用户登录认证时默认跳转的页面
+				.loginPage("/authentication/require")
+				// 以下这行 UsernamePasswordAuthenticationFilter 会知道要处理表单的 /authentication/form 请求，而不是默认的 /login
+				.loginProcessingUrl("/authentication/form")
+				.successHandler(meicloudAuthenticationSuccessHandler)
+				.failureHandler(meicloudAuthenticationFailureHandler)
 				.and()
 				.authorizeRequests()
+				// 排除对 "/authentication/require" 和 "/meicloud-signIn.html" 的身份验证
+				.antMatchers("/authentication/require", securityProperties.getBrowser().getSignInPage()).permitAll()
+				// 表示所有请求都需要身份验证
 				.anyRequest()
-				.authenticated();
+				.authenticated()
+				.and()
+				.csrf().disable();// 暂时把跨站请求伪造的功能关闭掉
 	}
 }
