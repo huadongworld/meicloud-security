@@ -7,11 +7,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 /**
  * 浏览器环境下安全配置主类
@@ -29,6 +34,12 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private SecurityProperties securityProperties;
+
+	@Autowired
+	private DataSource dataSource;
+
+	@Autowired
+	private UserDetailsService userDetailsService;
 
 	@Autowired
 	private AuthenticationSuccessHandler meicloudAuthenticationSuccessHandler;
@@ -51,6 +62,15 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/authentication/form")
 				.successHandler(meicloudAuthenticationSuccessHandler)
 				.failureHandler(meicloudAuthenticationFailureHandler)
+				// 配置记住我功能
+				.and()
+				.rememberMe()
+				// 配置TokenRepository
+				.tokenRepository(persistentTokenRepository())
+				// 配置Token过期时间
+				.tokenValiditySeconds(3600)
+				// 最终拿到用户名之后，使用UserDetailsService去做登录
+				.userDetailsService(userDetailsService)
 				.and()
 				.authorizeRequests()
 				// 排除对 "/authentication/require" 和 "/meicloud-signIn.html" 的身份验证
@@ -61,5 +81,19 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.csrf().disable();// 暂时把跨站请求伪造的功能关闭掉
 
+	}
+
+	/**
+	 * 记住我功能的Token存取器配置
+	 *
+	 * @return
+	 */
+	@Bean
+	public PersistentTokenRepository persistentTokenRepository() {
+		JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+		tokenRepository.setDataSource(dataSource);
+		// 启动的时候自动创建表，建表语句 JdbcTokenRepositoryImpl 已经都写好了
+		tokenRepository.setCreateTableOnStartup(true);
+		return tokenRepository;
 	}
 }
