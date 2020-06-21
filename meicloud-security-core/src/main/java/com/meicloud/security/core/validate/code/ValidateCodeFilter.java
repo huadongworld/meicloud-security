@@ -61,10 +61,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
 	public void afterPropertiesSet() throws ServletException {
 		super.afterPropertiesSet();
 
-		urlMap.put(SecurityConstants.DEFAULT_SIGN_IN_PROCESSING_URL_FORM, ValidateCodeType.IMAGE);
-		addUrlToMap(securityProperties.getCode().getImage().getUrl(), ValidateCodeType.IMAGE);
-
-		urlMap.put(SecurityConstants.DEFAULT_SIGN_IN_PROCESSING_URL_MOBILE, ValidateCodeType.SMS);
+		urlMap.put("/authentication/mobile", ValidateCodeType.SMS);
 		addUrlToMap(securityProperties.getCode().getSms().getUrl(), ValidateCodeType.SMS);
 	}
 
@@ -83,13 +80,14 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.springframework.web.filter.OncePerRequestFilter#doFilterInternal(
-	 * javax.servlet.http.HttpServletRequest,
-	 * javax.servlet.http.HttpServletResponse, javax.servlet.FilterChain)
+	/**
+	 * 验证短信验证码
+	 *
+	 * @param request
+	 * @param response
+	 * @param chain
+	 * @throws ServletException
+	 * @throws IOException
 	 */
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
@@ -131,5 +129,4 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
 		}
 		return result;
 	}
-
 }

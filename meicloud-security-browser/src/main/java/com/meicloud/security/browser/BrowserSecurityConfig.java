@@ -1,5 +1,7 @@
 package com.meicloud.security.browser;
 
+import com.meicloud.security.core.authentication.mobile.SmsCodeAuthenticationFilter;
+import com.meicloud.security.core.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
 import com.meicloud.security.core.properties.SecurityProperties;
 import com.meicloud.security.core.validate.code.ValidateCodeFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -42,11 +45,16 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserDetailsService userDetailsService;
 
 	@Autowired
+	private LogoutSuccessHandler logoutSuccessHandler;
+
+	@Autowired
 	private AuthenticationSuccessHandler meicloudAuthenticationSuccessHandler;
 
 	@Autowired
 	private AuthenticationFailureHandler meicloudAuthenticationFailureHandler;
 
+	@Autowired
+	private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -65,22 +73,32 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 				// 配置记住我功能
 				.and()
 				.rememberMe()
-				// 配置TokenRepository
-				.tokenRepository(persistentTokenRepository())
-				// 配置Token过期时间
-				.tokenValiditySeconds(3600)
-				// 最终拿到用户名之后，使用UserDetailsService去做登录
-				.userDetailsService(userDetailsService)
-				.and()
+					// 配置TokenRepository
+					.tokenRepository(persistentTokenRepository())
+					// 配置Token过期时间
+					.tokenValiditySeconds(3600)
+					// 最终拿到用户名之后，使用UserDetailsService去做登录
+					.userDetailsService(userDetailsService)
+					.and()
 				.authorizeRequests()
-				// 排除对 "/authentication/require" 和 "/meicloud-signIn.html" 的身份验证
-				.antMatchers("/authentication/require", securityProperties.getBrowser().getSignInPage(), "/code/image").permitAll()
-				// 表示所有请求都需要身份验证
-				.anyRequest()
-				.authenticated()
-				.and()
-				.csrf().disable();// 暂时把跨站请求伪造的功能关闭掉
-
+					// 排除对 "/authentication/require" 和 "/meicloud-signIn.html" 的身份验证
+					.antMatchers("/authentication/require", securityProperties.getBrowser().getSignInPage(), "/code/*").permitAll()
+					// 表示所有请求都需要身份验证
+					.anyRequest()
+					.authenticated()
+					.and()
+				.logout()
+					// 配置推出的登录接口
+					.logoutUrl("/signOut")
+					// 退出登录后跳到的页面
+//					.logoutSuccessUrl("meicloud-logout.html")
+					// 配置登出成功处理器
+					.logoutSuccessHandler(logoutSuccessHandler)
+					.deleteCookies("JSESSIONID")
+					.and()
+				.csrf().disable()// 暂时把跨站请求伪造的功能关闭掉
+				// 相当于把smsCodeAuthenticationSecurityConfig里的配置加到上面这些配置的后面
+				.apply(smsCodeAuthenticationSecurityConfig);
 	}
 
 	/**
